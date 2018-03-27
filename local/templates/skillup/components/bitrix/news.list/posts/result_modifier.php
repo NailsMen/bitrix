@@ -1,7 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: php2
- * Date: 27.03.18
- * Time: 21:48
- */
+$aSize = [
+    'width'=>200,
+    'height'=>200,
+];
+foreach ($arResult['ITEMS'] as $aItem) {
+    $aPicture = \CFile::ResizeImageGet($aItem['DETAIL_PICTURE'],$aSize,BX_RESIZE_IMAGE_EXACT);
+    $arResult['PICTURES'][$aItem['ID']] = $aPicture;
+}
